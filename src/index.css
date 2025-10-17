@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Manor Tea Brand Colors - Warm, Elegant, Premium */
+    --background: 35 40% 96%;
+    --foreground: 25 20% 15%;
+
+    --card: 35 50% 98%;
+    --card-foreground: 25 20% 15%;
+
+    --popover: 35 50% 98%;
+    --popover-foreground: 25 20% 15%;
+
+    /* Primary - Warm Amber/Orange from Manor packaging */
+    --primary: 35 85% 60%;
+    --primary-foreground: 25 20% 15%;
+
+    /* Secondary - Cream tones */
+    --secondary: 35 30% 88%;
+    --secondary-foreground: 25 20% 15%;
+
+    /* Muted - Soft neutrals */
+    --muted: 35 25% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Rich amber */
+    --accent: 30 90% 65%;
+    --accent-foreground: 25 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 50% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 35 85% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom Manor gradients and effects */
+    --gradient-warm: linear-gradient(135deg, hsl(35 85% 60%), hsl(25 80% 55%));
+    --gradient-cream: linear-gradient(180deg, hsl(35 50% 98%), hsl(35 40% 94%));
+    --shadow-warm: 0 4px 20px hsl(35 85% 60% / 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 35 40% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 35 40% 95%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 40% 95%;
+
+    --primary: 35 80% 55%;
+    --primary-foreground: 35 50% 98%;
+
+    --secondary: 25 15% 20%;
+    --secondary-foreground: 35 40% 95%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 30 85% 60%;
+    --accent-foreground: 35 50% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 40% 95%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 35 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  .manor-gradient {
+    background: var(--gradient-warm);
+  }
+
+  .manor-shadow {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .manor-transition {
+    transition: var(--transition-smooth);
+  }
+
+  button, a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button:hover, a:hover {
+    transform: translateY(-1px);
+  }
+
+  button:active, a:active {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
